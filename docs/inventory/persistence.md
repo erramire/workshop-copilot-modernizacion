@@ -6,7 +6,7 @@ Ruta base: `legacy/java/jakarta-ee/student-web-app/`
 
 | Tecnología | Versión | Estado |
 | --- | --- | --- |
-| iBATIS SQL Maps (`com.ibatis:ibatis-sqlmap`) | 2.3.0 | **EOL**: Apache iBATIS se retiró en 2010 y lo reemplazó MyBatis 3. Spring eliminó su integración en 4.0 |
+| iBATIS SQL Maps (`org.apache.ibatis:ibatis-sqlmap`, paquetes `com.ibatis.*`) | 2.3.0 | **EOL**: Apache iBATIS se retiró en 2010 y lo reemplazó MyBatis 3. Spring eliminó su integración en 4.0 |
 | MyBatis 3 | — | No se usa. El nombre `MyBatisUtil` y la documentación del sample son engañosos |
 | Hibernate / JPA | — | No se usa (no hay `@Entity`, `persistence.xml` ni `*.hbm.xml`) |
 | `JdbcTemplate` | — | No se usa |

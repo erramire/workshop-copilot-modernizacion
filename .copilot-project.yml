@@ -1,0 +1,9 @@
+# Flujo Java (Lab 02). El Lab 01 (.NET) espera legacy_tech: dotnet-framework.
+project:
+  name: student-web-app
+legacy_tech: java
+legacy_lang: spring-legacy
+legacy_path: legacy/java/jakarta-ee/student-web-app
+target_stack: spring-boot-3.5
+target_path: src/student-web-app
+cloud_provider: azure

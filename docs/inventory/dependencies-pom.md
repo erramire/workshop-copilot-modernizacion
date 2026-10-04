@@ -17,7 +17,7 @@ La versión target queda **a confirmar en Fase 2** ([B-06](../blockers.md#b-06))
 | `org.springframework` | `spring-web` | 5.3.23 | `WEB-INF/lib/spring` | Ídem | 🚨 CVEs |
 | `org.springframework` | `spring-webmvc` | 5.3.23 | `WEB-INF/lib/spring` | Ídem | Upgrade mayor |
 | `org.springframework` | `spring-expression`, `spring-jcl` | **Ausentes** | — | Transitivas con Maven | ⚠ [B-02](../blockers.md#b-02) |
-| `com.ibatis` | `ibatis-sqlmap` | 2.3.0 | `WEB-INF/lib/mybatis` | Eliminar (MyBatis 3, JPA o `JdbcClient`) | EOL, reescritura |
+| `org.apache.ibatis` | `ibatis-sqlmap` | 2.3.0 | `WEB-INF/lib/mybatis` | Eliminar (MyBatis 3, JPA o `JdbcClient`) | EOL, reescritura |
 | `org.codehaus.jackson` | `jackson-mapper-asl` | 1.9.13 | `WEB-INF/lib/jackson` | Eliminar (Jackson 2 con SB 3 / Jackson 3 con SB 4) | 🚨 CVE, EOL |
 | `org.codehaus.jackson` | `jackson-core-asl` | 1.9.13 | `WEB-INF/lib/jackson` | Eliminar | EOL |
 | `log4j` | `log4j` | 1.2.17 | `WEB-INF/lib/log4j` | Eliminar (SLF4J + Logback) | 🚨 CVEs, EOL 2015 |

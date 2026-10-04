@@ -116,7 +116,7 @@ La Fase 1 no decide el target. Validar con el cliente o facilitador:
 
 - [ ] Ejecutar OWASP Dependency-Check sobre `WebContent/WEB-INF/lib/` y `mysql-connector/` para confirmar los CVEs.
 - [ ] Construir y desplegar la línea base (`ant war` + `docker compose up`) para validar [B-02](blockers.md#b-02) y capturar el comportamiento actual.
-- [ ] Crear `.copilot-project.yml` si el flujo del playbook lo requiere.
+- [x] Crear `.copilot-project.yml` (creado en la Fase 2).
 
 ## Entregables de esta fase
 
