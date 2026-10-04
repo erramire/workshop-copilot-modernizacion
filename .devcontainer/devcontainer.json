@@ -16,13 +16,13 @@
     "ghcr.io/devcontainers/features/git:1": {}
   },
 
-  "onCreateCommand": "bash /workspaces/workshop-copilot-modernizacion/.devcontainer/install-java.sh",
+  "onCreateCommand": "sudo bash ${containerWorkspaceFolder}/.devcontainer/install-java.sh",
 
   "remoteEnv": {
     "JAVA_HOME_8":  "/usr/lib/jvm/temurin-8",
     "JAVA_HOME_21": "/usr/lib/jvm/temurin-21",
     "JAVA_HOME":    "/usr/lib/jvm/temurin-21",
-    "PATH":         "${PATH}:/usr/lib/jvm/temurin-21/bin"
+    "PATH":         "${containerEnv:PATH}:/usr/lib/jvm/temurin-21/bin"
   },
 
   "customizations": {

@@ -17,9 +17,10 @@ echo "deb https://packages.adoptium.net/artifactory/deb $(awk -F= '/^VERSION_COD
 apt-get update -q
 apt-get install -y -q temurin-8-jdk temurin-21-jdk maven
 
-# Crear symlinks con nombres consistentes
-ln -sf /usr/lib/jvm/temurin-8-amd64  /usr/lib/jvm/temurin-8  2>/dev/null || true
-ln -sf /usr/lib/jvm/temurin-21-amd64 /usr/lib/jvm/temurin-21 2>/dev/null || true
+# Crear symlinks con nombres consistentes (Adoptium instala en temurin-XX-jdk-<arch>)
+ARCH="$(dpkg --print-architecture)"
+ln -sfn "/usr/lib/jvm/temurin-8-jdk-${ARCH}"  /usr/lib/jvm/temurin-8
+ln -sfn "/usr/lib/jvm/temurin-21-jdk-${ARCH}" /usr/lib/jvm/temurin-21
 
 echo "=== Temurin 8 ==="
 /usr/lib/jvm/temurin-8/bin/java -version
