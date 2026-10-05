@@ -1,0 +1,7 @@
+# Actualizaciones automáticas de dependencias (ADR-004).
+version: 2
+updates:
+  - package-ecosystem: "maven"
+    directory: "/src/student-web-app"
+    schedule:
+      interval: "weekly"

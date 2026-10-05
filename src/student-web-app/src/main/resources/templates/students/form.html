@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="~{fragments/layout :: head('Add Student Profile')}"></head>
+<body class="form-page">
+<div class="container">
+    <div class="header">
+        <h1>Add Student Profile</h1>
+    </div>
+
+    <nav th:replace="~{fragments/layout :: nav}"></nav>
+
+    <form th:action="@{/app/add-student}" th:object="${studentForm}" method="post">
+        <div class="form-group">
+            <label for="name">Student Name:</label>
+            <input type="text" id="name" th:field="*{name}" required placeholder="Enter student's full name">
+            <div class="field-error" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Invalid name</div>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" th:field="*{email}" required placeholder="Enter student's email">
+            <div class="field-error" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Invalid email</div>
+        </div>
+
+        <div class="form-group">
+            <label for="major">Major/Field of Study:</label>
+            <input type="text" id="major" th:field="*{major}" required placeholder="Enter student's major">
+            <div class="field-error" th:if="${#fields.hasErrors('major')}" th:errors="*{major}">Invalid major</div>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Add Student">
+        </div>
+    </form>
+</div>
+</body>
+</html>

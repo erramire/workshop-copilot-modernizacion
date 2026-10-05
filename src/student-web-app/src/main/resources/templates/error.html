@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="~{fragments/layout :: head('Error - Student Management System')}"></head>
+<body>
+<div class="header">
+    <h1>Student Management System</h1>
+</div>
+
+<nav th:replace="~{fragments/layout :: nav}"></nav>
+
+<div class="error" th:switch="${status}">
+    <span th:case="404">The page you requested was not found.</span>
+    <span th:case="403">The request was rejected.</span>
+    <span th:case="*">An unexpected error occurred. Please try again later.</span>
+</div>
+</body>
+</html>

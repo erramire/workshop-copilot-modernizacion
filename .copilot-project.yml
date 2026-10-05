@@ -1,0 +1,23 @@
+# Contexto compartido por los agentes de .github/agents
+# El lab .NET puede añadir su propia entrada bajo "projects".
+cloud_provider: azure
+
+projects:
+  student-web-app:
+    legacy_path: legacy/java/jakarta-ee/student-web-app
+    legacy_tech: java
+    legacy_lang: spring-legacy
+    target_stack: spring-boot-3.5 / java-21 (temurin)
+    target_path: src/student-web-app
+    strategy: hybrid
+    docs:
+      assessment: docs/assessment-summary.md
+      architecture: docs/ARQUITECTURA-TARGET.md
+      adrs: docs/adr/
+      scope: docs/MIGRATION-SCOPE.md
+      plan: docs/migration-plan.md
+      risks: docs/risks.md
+    deploy:
+      container_app: ca-petclinic-{participantPrefix}
+      image: petclinic:workshop
+      port: 8080

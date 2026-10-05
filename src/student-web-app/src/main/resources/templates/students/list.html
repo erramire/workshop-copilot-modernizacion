@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="~{fragments/layout :: head('Student Management System')}"></head>
+<body>
+<div class="header">
+    <h1>Student Management System</h1>
+</div>
+
+<nav th:replace="~{fragments/layout :: nav}"></nav>
+
+<div class="error" th:if="${error}">
+    <strong>Error:</strong> <span th:text="${error}">Unable to load student data.</span>
+</div>
+
+<div class="info" th:if="${successMessage}">
+    <strong>Success:</strong> <span th:text="${successMessage}">Student added successfully!</span>
+</div>
+
+<div class="error" th:if="${errorMessage}">
+    <strong>Error:</strong> <span th:text="${errorMessage}">Failed to save student. Please try again.</span>
+</div>
+
+<h2>Student Profiles</h2>
+
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Major</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="student : ${students}">
+        <td th:text="${student.id}">1</td>
+        <td th:text="${student.name}">Alice Johnson</td>
+        <td th:text="${student.email}">alice@example.com</td>
+        <td th:text="${student.major}">Biology</td>
+    </tr>
+    <tr th:if="${#lists.isEmpty(students) and error == null}">
+        <td colspan="4" class="empty">No student profiles found.</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
